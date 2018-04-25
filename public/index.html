@@ -13,6 +13,9 @@
 </head>
 
 <body>
+
+    <!-- <img src="http://localhost:3000/imagen/productos/5ae09b0bc9718d4028e7db25-499.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI1YWRlM2E2MGY3NzI5YzNlZjQ3YmE1YzEiLCJub21icmUiOiJ0ZXN0MSIsImVtYWlsIjoidGVzdDFAY29ycmVvLmNvbSIsIl9fdiI6MCwiaW1nIjoiNWFkZTNhNjBmNzcyOWMzZWY0N2JhNWMxLTIxNy5qcGcifSwiaWF0IjoxNTI0Njg0OTUyLCJleHAiOjE1MjQ2ODc1NDR9.E_zPrssI7I0cBzNo2GgK8-7QmDgvOwPfPCDuwUUfrew"> -->
+
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
@@ -29,7 +32,7 @@
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/google');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
+            xhr.onload = function () {
                 console.log('Signed in as: ' + xhr.responseText);
             };
             xhr.send('idtoken=' + id_token);
@@ -38,7 +41,7 @@
 
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function() {
+            auth2.signOut().then(function () {
                 console.log('User signed out.');
             });
         }
